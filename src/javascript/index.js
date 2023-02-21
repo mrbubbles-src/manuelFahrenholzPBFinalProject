@@ -25,7 +25,6 @@ HP: ${this.health}
 MP: ${this.magic}
 Available Skills: ${availableSkills.join(", ")}`;
     }
-    // mana prüfung umdrehen
     attack(skillIndex, attackedPokemon) {
         if (this.magic < this.skills[skillIndex].MPCost) {
             return `${this.name} only has ${this.magic}MP left and can't use ${this.skills[skillIndex].skillName}.`;
