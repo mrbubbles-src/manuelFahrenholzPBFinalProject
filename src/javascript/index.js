@@ -9,9 +9,21 @@ class Pokemon {
         this.skills = [];
     }
     showStatus() {
+        let availableSkills = [];
+        if (this.skills.length === 0) {
+            availableSkills.push(
+                `${this.name} has not learned any skills yet!`
+            );
+        }
+        for (let i = 0; i < this.skills.length; i++) {
+            if (this.skills.length !== 0) {
+                availableSkills.push(this.skills[i].skillName);
+            }
+        }
         return `${this.name}
 HP: ${this.health}
-MP: ${this.magic}`;
+MP: ${this.magic}
+Available Skills: ${availableSkills.join(", ")}`;
     }
     attack() {}
     getMagic() {}
@@ -21,11 +33,9 @@ MP: ${this.magic}`;
     }
 }
 const pikachu = new Pokemon("Pikachu", 100, 50);
-console.log(pikachu);
-console.log(pikachu.showStatus());
+// console.log(pikachu);
 const bulbasaur = new Pokemon("Bulbasaur", 90, 60);
-console.log(bulbasaur);
-console.log(bulbasaur.showStatus());
+// console.log(bulbasaur);
 
 /**
  * ATTACKSKILL CLASS
@@ -42,6 +52,8 @@ const tackle = new AttackSkill("Tackle", 20, 30);
 pikachu.learnAttackSkill(lightningBolt);
 bulbasaur.learnAttackSkill(tackle);
 // console.log(pikachu.skills[0].skillName);
-console.log(pikachu);
+// console.log(pikachu);
 // console.log(bulbasaur.skills[0].skillName);
-console.log(bulbasaur);
+// console.log(bulbasaur);
+console.log(bulbasaur.showStatus());
+console.log(pikachu.showStatus());
