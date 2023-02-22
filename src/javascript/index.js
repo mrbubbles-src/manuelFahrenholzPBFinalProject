@@ -68,11 +68,17 @@ Available Skills: ${availableSkills.join(", ")}`;
         if (skillStr) this.skills.push(skillStr);
     }
 }
-const pikachu = new Pokemon("Pikachu", 100, 210);
-// console.log(pikachu);
-const bulbasaur = new Pokemon("Bulbasaur", 90, 60);
-// console.log(bulbasaur);
-
+/**
+ * CREATED POKEMON
+ */
+const bulbasaur = new Pokemon("Bulbasaur", 294, 100);
+const pikachu = new Pokemon("Pikachu", 274, 100);
+const psyduck = new Pokemon("Psyduck", 304, 100);
+const gengar = new Pokemon("Gengar", 324, 100);
+const magikarp = new Pokemon("Magicarp", 244, 100);
+const jigglypuff = new Pokemon("Jigglypuff", 434, 100);
+const snorlax = new Pokemon("Snorlax", 524, 100);
+const voltorb = new Pokemon("Voltorb", 284, 100);
 /**
  * ATTACKSKILL CLASS
  */
@@ -83,7 +89,34 @@ class AttackSkill {
         this.MPCost = MPCost;
     }
 }
-const lightningBolt = new AttackSkill("Lightning Bolt", 40, 70);
-const tackle = new AttackSkill("Tackle", 20, 30);
-pikachu.learnAttackSkill(lightningBolt);
-bulbasaur.learnAttackSkill(tackle);
+/**
+ * AVAILABLE SKILLS
+ */
+const psychoBoost = new AttackSkill("Psycho Boost", 140, 20);
+const headSmash = new AttackSkill("Head Smash", 150, 20);
+const blastBurn = new AttackSkill("Blast Burn", 150, 20);
+const hydroCannon = new AttackSkill("Hydro Cannon", 150, 20);
+const frenzyPlant = new AttackSkill("Frenzy Plant", 150, 20);
+const hyperBeam = new AttackSkill("Hyper Beam", 150, 20);
+const tenMVThunderBolt = new AttackSkill(
+    "10,000,000 Volt Thunder Bolt",
+    195,
+    50
+);
+const knockOff = new AttackSkill("Knock Off", 65, 5);
+const scald = new AttackSkill("Scald", 80, 6);
+const fireLash = new AttackSkill("Fire Lash", 80, 5);
+const firePunch = new AttackSkill("Fire Punch", 75, 5);
+const leafBlade = new AttackSkill("Leaf Blade", 90, 5);
+const razorLeaf = new AttackSkill("Razor Leaf", 80, 4);
+const bodySlam = new AttackSkill("Body Slam", 85, 6);
+const crushClaw = new AttackSkill("Crush Claw", 75, 10);
+const aquaCutter = new AttackSkill("Aqua Cutter", 70, 5);
+const splishySplash = new AttackSkill("Splishy Splash", 90, 6);
+const thunder = new AttackSkill("Thunder", 110, 10);
+const thunderBolt = new AttackSkill("Thunder Bolt", 90, 6);
+const thunderShock = new AttackSkill("Thunder Shock", 40, 6);
+
+/**
+ * ATTACK LOOP
+ */
