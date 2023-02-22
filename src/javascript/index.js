@@ -5,7 +5,11 @@ class Pokemon {
     constructor(name, health, magic) {
         this.name = name;
         this.health = health;
+        this.curHealth = health;
+        this.maxHealth = health;
         this.magic = magic;
+        this.curMagic = magic;
+        this.maxMagic = magic;
         this.skills = [];
     }
     showStatus() {
@@ -21,30 +25,44 @@ class Pokemon {
             }
         }
         return `${this.name}
-HP: ${this.health}
-MP: ${this.magic}
+HP: ${this.curHealth}/${this.maxHealth}
+MP: ${this.curMagic}/${this.maxMagic}
 Available Skills: ${availableSkills.join(", ")}`;
     }
     attack(skillIndex, attackedPokemon) {
-        if (this.magic < this.skills[skillIndex].MPCost) {
-            return `${this.name} only has ${this.magic}MP left and can't use ${this.skills[skillIndex].skillName}.`;
-        } else if (this.magic >= this.skills[skillIndex].MPCost) {
-            this.magic -= this.skills[skillIndex].MPCost;
-            attackedPokemon.health -= this.skills[skillIndex].dmgAmount;
-            if (attackedPokemon.health <= 0) {
-                attackedPokemon.health = 0;
+        if (this.curMagic < this.skills[skillIndex].MPCost) {
+            return `${this.name} only has ${this.curMagic}MP left and can't use ${this.skills[skillIndex].skillName}.`;
+        } else if (this.curMagic >= this.skills[skillIndex].MPCost) {
+            this.curMagic -= this.skills[skillIndex].MPCost;
+            attackedPokemon.curHealth -= this.skills[skillIndex].dmgAmount;
+            if (attackedPokemon.curHealth <= 0) {
+                attackedPokemon.curHealth = 0;
                 return `${this.name} used ${this.skills[skillIndex].skillName} against ${attackedPokemon.name}. ${attackedPokemon.name} fainted! ${this.name} has won the battle!`;
             }
-            return `${this.name} used ${this.skills[skillIndex].skillName} against ${attackedPokemon.name} and dealt ${this.skills[skillIndex].dmgAmount} damage! ${attackedPokemon.name} has ${attackedPokemon.health} HP left`;
+            return `${this.name} used ${this.skills[skillIndex].skillName} against ${attackedPokemon.name} and dealt ${this.skills[skillIndex].dmgAmount} damage! ${attackedPokemon.name} has ${attackedPokemon.curHealth}/${attackedPokemon.maxHealth} HP left`;
         }
     }
     getMagic() {
-        this.magic += 20;
-        return `${this.name} used a Potion and restored 20MP. ${this.name} noch has ${this.magic}`;
+        if (this.maxMagic - this.curMagic === 0) {
+            return `${this.name} is already at ${this.curMagic}/${this.maxMagic}MP. No potion used.`;
+        } else if (this.maxMagic - this.curMagic <= 20) {
+            this.curMagic = this.maxMagic;
+            return `${this.name} is now at ${this.curMagic}/${this.maxMagic}MP - No more Potions needed!`;
+        } else {
+            this.curMagic += 20;
+            return `${this.name} used a Potion and restored 20MP. ${this.name} is now at ${this.curMagic}/${this.maxMagic}MP.`;
+        }
     }
     getHealth() {
-        this.health += 50;
-        return `${this.name} used a Potion and restored 50HP. ${this.name} noch has ${this.health}`;
+        if (this.maxHealth - this.curHealth === 0) {
+            return `${this.name} is already at ${this.curHealth}/${this.maxHealth}HP. No potion used.`;
+        } else if (this.maxHealth - this.curHealth <= 50) {
+            this.curHealth = this.maxHealth;
+            return `${this.name} is now at ${this.curHealth}/${this.maxHealth}HP - No more Potions needed!`;
+        } else {
+            this.curHealth += 50;
+            return `${this.name} used a Potion and restored 50HP. ${this.name} is now at ${this.curHealth}/${this.maxHealth}HP.`;
+        }
     }
     learnAttackSkill(skillStr) {
         if (skillStr) this.skills.push(skillStr);
@@ -69,17 +87,3 @@ const lightningBolt = new AttackSkill("Lightning Bolt", 40, 70);
 const tackle = new AttackSkill("Tackle", 20, 30);
 pikachu.learnAttackSkill(lightningBolt);
 bulbasaur.learnAttackSkill(tackle);
-// console.log(pikachu.skills[0].skillName);
-// console.log(pikachu);
-// console.log(bulbasaur.skills[0].skillName);
-// console.log(bulbasaur);
-// console.log(pikachu.showStatus());
-console.log(pikachu.attack(0, bulbasaur));
-console.log(bulbasaur.showStatus());
-console.log(pikachu.showStatus());
-console.log(pikachu.attack(0, bulbasaur));
-console.log(bulbasaur.showStatus());
-console.log(pikachu.showStatus());
-console.log(pikachu.attack(0, bulbasaur));
-console.log(bulbasaur.getMagic());
-console.log(bulbasaur.showStatus());
