@@ -31,7 +31,7 @@ Available Skills: ${availableSkills.join(", ")}`;
     }
     attack(skillIndex, attackedPokemon) {
         if (this.curMagic < this.skills[skillIndex].MPCost) {
-            return `${this.name} only has ${this.curMagic}MP left and can't use ${this.skills[skillIndex].skillName}.`;
+            return `${this.name} only has ${this.curMagic}MP and can't use ${this.skills[skillIndex].skillName}.`;
         } else if (this.curMagic >= this.skills[skillIndex].MPCost) {
             this.curMagic -= this.skills[skillIndex].MPCost;
             attackedPokemon.curHealth -= this.skills[skillIndex].dmgAmount;
@@ -45,11 +45,11 @@ Available Skills: ${availableSkills.join(", ")}`;
     getMagic() {
         if (this.maxMagic - this.curMagic === 0) {
             return `${this.name} is already at ${this.curMagic}/${this.maxMagic}MP. No potion used.`;
-        } else if (this.maxMagic - this.curMagic <= 20) {
+        } else if (this.maxMagic - this.curMagic <= 40) {
             this.curMagic = this.maxMagic;
             return `${this.name} is now at ${this.curMagic}/${this.maxMagic}MP - No more Potions needed!`;
         } else {
-            this.curMagic += 20;
+            this.curMagic += 40;
             return `${this.name} used a Potion and restored 20MP. ${this.name} is now at ${this.curMagic}/${this.maxMagic}MP.`;
         }
     }
@@ -65,7 +65,14 @@ Available Skills: ${availableSkills.join(", ")}`;
         }
     }
     learnAttackSkill(skillStr) {
-        if (skillStr) this.skills.push(skillStr);
+        if (this.skills.length === 4) {
+            return `${this.name} can't learn ${skillStr.skillName} as it already has four abilities!`;
+        } else if (this.skills.includes(skillStr)) {
+            return `${this.name} already knows ${skillStr.skillName}!`;
+        } else {
+            this.skills.push(skillStr);
+            return `${this.name} learned ${skillStr.skillName}!`;
+        }
     }
 }
 /**
@@ -79,6 +86,18 @@ const magikarp = new Pokemon("Magicarp", 244, 100);
 const jigglypuff = new Pokemon("Jigglypuff", 434, 100);
 const snorlax = new Pokemon("Snorlax", 524, 100);
 const voltorb = new Pokemon("Voltorb", 284, 100);
+
+const availablePokeMonArr = [
+    bulbasaur,
+    pikachu,
+    psyduck,
+    gengar,
+    magikarp,
+    jigglypuff,
+    snorlax,
+    voltorb,
+];
+
 /**
  * ATTACKSKILL CLASS
  */
@@ -101,7 +120,7 @@ const hyperBeam = new AttackSkill("Hyper Beam", 150, 20);
 const tenMVThunderBolt = new AttackSkill(
     "10,000,000 Volt Thunder Bolt",
     195,
-    50
+    100
 );
 const knockOff = new AttackSkill("Knock Off", 65, 5);
 const scald = new AttackSkill("Scald", 80, 6);
@@ -117,6 +136,61 @@ const thunder = new AttackSkill("Thunder", 110, 10);
 const thunderBolt = new AttackSkill("Thunder Bolt", 90, 6);
 const thunderShock = new AttackSkill("Thunder Shock", 40, 6);
 
+const availableSkillArr = [
+    psychoBoost,
+    headSmash,
+    blastBurn,
+    hydroCannon,
+    frenzyPlant,
+    hyperBeam,
+    tenMVThunderBolt,
+    knockOff,
+    scald,
+    fireLash,
+    firePunch,
+    leafBlade,
+    razorLeaf,
+    bodySlam,
+    crushClaw,
+    aquaCutter,
+    splishySplash,
+    thunder,
+    thunderBolt,
+    thunderShock,
+];
+const opponentPokemonGenerator = () => {
+    let generatedPokemon = Math.floor(
+        Math.random() * availablePokeMonArr.length
+    );
+    for (let i = 0; i < 4; i++) {
+        availablePokeMonArr[generatedPokemon].learnAttackSkill(
+            availableSkillArr[
+                Math.floor(Math.random() * availableSkillArr.length)
+            ]
+        );
+    }
+    return availablePokeMonArr[generatedPokemon];
+};
+
+// console.log(opponentPokemonGenerator());
+
 /**
- * ATTACK LOOP
+ * ATTACK LEARNING
  */
+console.log(pikachu.learnAttackSkill(thunder));
+console.log(pikachu.learnAttackSkill(thunderBolt));
+console.log(pikachu.learnAttackSkill(thunderShock));
+console.log(pikachu.learnAttackSkill(tenMVThunderBolt));
+console.log(pikachu.learnAttackSkill(bodySlam));
+console.log(pikachu.showStatus());
+
+/**
+ * ATTACK SEQUENCE
+ */
+
+console.log(pikachu.attack(3, opponentPokemonGenerator()));
+console.log(opponentPokemonGenerator().attack(0, pikachu));
+console.log(pikachu.getMagic());
+// console.log(pikachu.attack(0, opponentPokemonGenerator()));
+// console.log(pikachu.attack(3, opponentPokemonGenerator()));
+// console.log(pikachu.attack(3, opponentPokemonGenerator()));
