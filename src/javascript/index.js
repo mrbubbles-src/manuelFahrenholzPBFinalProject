@@ -326,19 +326,27 @@ const availableSkillArr = [
     thunderBolt,
     thunderShock,
 ];
-const opponentPokemonGenerator = () => {
-    let generatedPokemon = Math.floor(
-        Math.random() * availablePokeMonArr.length
-    );
-    for (let i = 0; i < 4; i++) {
-        availablePokeMonArr[generatedPokemon].learnAttackSkill(
-            availableSkillArr[
-                Math.floor(Math.random() * availableSkillArr.length)
-            ]
-        );
-    }
-    return availablePokeMonArr[generatedPokemon];
-};
+/** RND PKMN GENRATOR */
+// let rndPkmn;
+// const pokemonGenerator = () => {
+//     if (!rndPkmn) {
+//         let generatedPokemon = Math.floor(
+//             Math.random() * availablePokeMonArr.length
+//         );
+//         for (let i = 0; i < 4; i++) {
+//             availablePokeMonArr[generatedPokemon].learnAttackSkill(
+//                 availableSkillArr[
+//                     Math.floor(Math.random() * availableSkillArr.length)
+//                 ]
+//             );
+//         }
+//         rndPkmn = availablePokeMonArr[generatedPokemon];
+//     }
+//     return rndPkmn;
+// };
+// console.log(pokemonGenerator()); // logs the generated Pokémon
+// console.log(pokemonGenerator()); // logs the same Pokémon as before
+// console.log(pokemonGenerator()); // logs the same Pokémon as before
 /**
  * FIGHT STORY
  */
