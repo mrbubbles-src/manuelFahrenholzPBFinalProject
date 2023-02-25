@@ -97,7 +97,6 @@ const availablePokeMonArr = [
     snorlax,
     voltorb,
 ];
-
 /**
  * ATTACKSKILL CLASS
  */
@@ -158,132 +157,33 @@ const availableSkillArr = [
     thunderBolt,
     thunderShock,
 ];
-const opponentPokemonGenerator = () => {
-    let generatedPokemon = Math.floor(
-        Math.random() * availablePokeMonArr.length
-    );
-    for (let i = 0; i < 4; i++) {
-        availablePokeMonArr[generatedPokemon].learnAttackSkill(
-            availableSkillArr[
-                Math.floor(Math.random() * availableSkillArr.length)
-            ]
+/** RND PKMN GENRATOR */
+let rndPkmn;
+const pokemonGenerator = () => {
+    if (!rndPkmn) {
+        let generatedPokemon = Math.floor(
+            Math.random() * availablePokeMonArr.length
         );
+        for (let i = 0; i < 4; i++) {
+            availablePokeMonArr[generatedPokemon].learnAttackSkill(
+                availableSkillArr[
+                    Math.floor(Math.random() * availableSkillArr.length)
+                ]
+            );
+        }
+        rndPkmn = availablePokeMonArr[generatedPokemon];
     }
-    return availablePokeMonArr[generatedPokemon];
+    return rndPkmn;
 };
-
-/**
- * ATTACK LEARNING
- */
-console.log(`Pikachu is practising new attacks...`);
-console.log(` `);
+console.log(pokemonGenerator());
 console.log(pikachu.learnAttackSkill(thunder));
+console.log(pikachu.learnAttackSkill(tenMVThunderBolt));
 console.log(pikachu.learnAttackSkill(thunderBolt));
 console.log(pikachu.learnAttackSkill(thunderShock));
-console.log(pikachu.learnAttackSkill(tenMVThunderBolt));
-console.log(`-------------------------------------------------------------`);
-console.log(`Snorlax is hungry but can only find various TM's and VM's...`);
-console.log(` `);
-console.log(snorlax.learnAttackSkill(headSmash));
-console.log(snorlax.learnAttackSkill(hyperBeam));
-console.log(snorlax.learnAttackSkill(bodySlam));
-console.log(snorlax.learnAttackSkill(crushClaw));
-console.log(`-------------------------------------------------------------`);
-console.log(`Snorlax is still hungry and looks around for more things to eat.`);
-console.log(
-    `Snorlax spots Pikachu and sees their basket full of yummies and starts "run" over to eat all of the food in the basket.`
-);
-console.log(`-------------------------------------------------------------`);
-console.log(
-    `After a 5 minute run, Snorlax finally managed to get to the basket and starts to eat it.`
-);
-console.log(
-    `Alerted by all the gross sounds of someone eating, Pikachu turns around in disgust and immediately get's angry about what they sees:
-    Someone is eating all their berries and other yums they brought with them!`
-);
-console.log(`-------------------------------------------------------------`);
-console.log(
-    `Fully enraged, Pikachu sprints towards Snorlax, jumps on it's back and uses the newly learned Thunder Shock on it.`
-);
-console.log(`-------------------------------------------------------------`);
-console.log(pikachu.attack(2, snorlax));
-console.log(`-------------------------------------------------------------`);
-console.log(
-    `Suprised about the sudden tickle, Snorlax shakes their body, laughing, throwing Pikachu off their back.`
-);
-console.log(`-------------------------------------------------------------`);
-console.log(
-    `Pikachu, now even angrier, makes themselves ready to attack snorlax with all their power.... `
-);
-console.log(`-------------------------------------------------------------`);
-console.log(`The Battle begins!`);
-console.log(`-------------------------------------------------------------`);
-/**
- * ATTACK SEQUENCE
- */
-console.log(pikachu.showStatus());
-console.log(`----`);
-console.log(` VS `);
-console.log(`----`);
-console.log(snorlax.showStatus());
-console.log(`-------------------------------------------------------------`);
-console.log(pikachu.attack(1, snorlax));
-console.log(`-------------------------------------------------------------`);
-console.log(snorlax.attack(2, pikachu));
-console.log(`-------------------------------------------------------------`);
-console.log(pikachu.showStatus());
-console.log(`-------------------------------------------------------------`);
-console.log(snorlax.showStatus());
-console.log(`-------------------------------------------------------------`);
-console.log(pikachu.attack(3, snorlax));
-console.log(`-------------------------------------------------------------`);
-console.log(snorlax.attack(2, pikachu));
-console.log(`-------------------------------------------------------------`);
-console.log(pikachu.showStatus());
-console.log(`-------------------------------------------------------------`);
-console.log(snorlax.showStatus());
-console.log(`-------------------------------------------------------------`);
-console.log(
-    `Out of breath, Pikachu looks around, trying to find something they can use to their advantage... A HEALTH POTION! Pikachu sprints towards the potion hoping to get there before Snorlax can get to them... And just in time Pikachu makes it to the potion! `
-);
-console.log(`-------------------------------------------------------------`);
+console.log(pokemonGenerator().attack(2, pikachu));
+console.log(pikachu.attack(2, pokemonGenerator()));
+console.log(pokemonGenerator().attack(2, pikachu));
 console.log(pikachu.getHealth());
-console.log(`-------------------------------------------------------------`);
-console.log(
-    `After drinking the potion, Pikachu turns around, seeing Snorlax running towards them... They see something else though: A MANA POTION ... pressed into Snorlax's bellybutton ... - Pikachu is grossed out but does not want to loose against the food theif so they sprint towards the enemy, focused on the target, jumps at it and ....`
-);
-console.log(`-------------------------------------------------------------`);
-console.log(pikachu.getMagic());
-console.log(`-------------------------------------------------------------`);
-console.log(
-    `Pikachu, feeling much better now jumps off Snorlax's belly and readies another attack...`
-);
-console.log(`-------------------------------------------------------------`);
-console.log(pikachu.attack(3, snorlax));
-console.log(`-------------------------------------------------------------`);
+console.log(pokemonGenerator().getMagic());
+console.log(pokemonGenerator().showStatus());
 console.log(pikachu.showStatus());
-console.log(`-------------------------------------------------------------`);
-console.log(snorlax.showStatus());
-console.log(`-------------------------------------------------------------`);
-console.log(
-    `Almost collapsing from exhaustion, Snorlax prepares a devestating attack...`
-);
-console.log(`-------------------------------------------------------------`);
-console.log(snorlax.attack(1, pikachu));
-console.log(`-------------------------------------------------------------`);
-console.log(pikachu.showStatus());
-console.log(`-------------------------------------------------------------`);
-console.log(snorlax.showStatus());
-console.log(`-------------------------------------------------------------`);
-console.log(
-    `Both Pikachu and Snorlax prepare themselves for a final attack. Which of them will be faster at this point? ....`
-);
-console.log(`-------------------------------------------------------------`);
-console.log(pikachu.attack(0, snorlax));
-console.log(`-------------------------------------------------------------`);
-console.log(
-    `Exhausted from this tough battle, but happy that they've got revenge against the food thief, Pikachu makes their way to the nearest Poké-Café to grab some well earned yums.`
-);
-console.log(`
--- The End --
-`);
