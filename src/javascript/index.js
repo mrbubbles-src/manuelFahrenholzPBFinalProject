@@ -79,14 +79,42 @@ Available Skills: ${availableSkills.join(", ")}`;
 /**
  * CREATED POKEMON
  */
-const bulbasaur = new Pokemon("Bulbasaur", 294, 100);
-const pikachu = new Pokemon("Pikachu", 274, 100);
-const psyduck = new Pokemon("Psyduck", 304, 100);
-const gengar = new Pokemon("Gengar", 324, 100);
-const magikarp = new Pokemon("Magicarp", 244, 100);
-const jigglypuff = new Pokemon("Jigglypuff", 434, 100);
-const snorlax = new Pokemon("Snorlax", 524, 100);
-const voltorb = new Pokemon("Voltorb", 284, 100);
+const bulbasaur = new Pokemon(
+    `${chalk.hex("#8BC7AE").bold("Bulbasaur")}`,
+    294,
+    100
+);
+const pikachu = new Pokemon(
+    `${chalk.hex("#FFCC01").bold("Pikachu")}`,
+    274,
+    100
+);
+const psyduck = new Pokemon(
+    `${chalk.hex("#F5CC82").bold("Psyduck")}`,
+    304,
+    100
+);
+const gengar = new Pokemon(`${chalk.hex("#A29DB9").bold("Gengar")}`, 324, 100);
+const magikarp = new Pokemon(
+    `${chalk.hex("#F07A5F").bold("Magikarp")}`,
+    244,
+    100
+);
+const jigglypuff = new Pokemon(
+    `${chalk.hex("#F9D1D9").bold("Jigglypuff")}`,
+    434,
+    100
+);
+const snorlax = new Pokemon(
+    `${chalk.hex("#029FC7").bold("Snorlax")}`,
+    524,
+    100
+);
+const voltorb = new Pokemon(
+    `${chalk.hex("#E59388").bold("Voltorb")}`,
+    284,
+    100
+);
 
 const availablePokeMonArr = [
     bulbasaur,
@@ -314,9 +342,11 @@ setTimeout(function () {
 }, 62000);
 setTimeout(function () {
     console.log(
-        `${chalk.bold(
-            "Fully enraged, Pikachu sprints towards Snorlax, jumps on it's back and uses the newly learned Thunder Shock on it."
-        )}`
+        `${chalk.bold("Fully enraged,")} ${pikachu.name}] ${chalk.bold(
+            "sprints towards"
+        )} ${snorlax.name}${chalk.bold(
+            ", jumps on it's back and uses the newly learned"
+        )} ${thunderShock.skillName} ${chalk.bold("on it.")}`
     );
 }, 72000);
 setTimeout(function () {
@@ -334,9 +364,11 @@ setTimeout(function () {
 }, 77000);
 setTimeout(function () {
     console.log(
-        `${chalk.bold(
-            "Suprised about the sudden tickle, Snorlax shakes their body, laughing, throwing Pikachu off their back."
-        )}`
+        `${chalk.bold("Suprised about the sudden tickle,")} ${
+            snorlax.name
+        } ${chalk.bold("shakes their body, laughing, throwing")} ${
+            pikachu.name
+        } ${chalk.bold("off their back.")}`
     );
 }, 82000);
 setTimeout(function () {
@@ -569,7 +601,7 @@ setTimeout(function () {
         `${chalk.bold("Both")} ${pikachu.name} ${chalk.bold("and")} ${
             snorlax.name
         } ${chalk.bold(
-            "prepare themselves for a final attack. Which of them will be faster at this point? ...."
+            "prepare themselves for a final attack. Which one of them will be faster at this point? ...."
         )}`
     );
 }, 207000);
