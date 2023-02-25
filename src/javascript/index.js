@@ -17,7 +17,7 @@ class Pokemon {
         let availableSkills = [];
         if (this.skills.length === 0) {
             availableSkills.push(
-                `${this.name} has not learned any skills yet!`
+                `${this.name} ${chalk.bold("has not learned any skills yet!")}`
             );
         }
         for (let i = 0; i < this.skills.length; i++) {
@@ -26,53 +26,121 @@ class Pokemon {
             }
         }
         return `${this.name}
-HP: ${this.curHealth}/${this.maxHealth}
-MP: ${this.curMagic}/${this.maxMagic}
-Available Skills: ${availableSkills.join(", ")}`;
+${chalk.bold("HP:")} ${chalk.hex("#49D188").bold([this.curHealth])}${chalk.bold(
+            "/"
+        )}${chalk.hex("#49D188").bold([this.maxHealth])}
+${chalk.bold("MP:")} ${chalk.hex("#4694E8").bold([this.curMagic])}${chalk.bold(
+            "/"
+        )}${chalk.hex("#4694E8").bold([this.maxMagic])}
+${chalk.bold("Available Skills:")} ${availableSkills.join(", ")}`;
     }
     attack(skillIndex, attackedPokemon) {
         if (this.curMagic < this.skills[skillIndex].MPCost) {
-            return `${this.name} tried to use ${this.skills[skillIndex].skillName} but has only ${this.curMagic}MP left.`;
+            return `${this.name} ${chalk.bold("tried to use")} ${
+                this.skills[skillIndex].skillName
+            } ${chalk.bold("but has only")} ${chalk
+                .hex("#4694E8")
+                .bold([this.curMagic])}MP left.`;
         } else if (this.curMagic >= this.skills[skillIndex].MPCost) {
             this.curMagic -= this.skills[skillIndex].MPCost;
             attackedPokemon.curHealth -= this.skills[skillIndex].dmgAmount;
             if (attackedPokemon.curHealth <= 0) {
                 attackedPokemon.curHealth = 0;
-                return `${this.name} used ${this.skills[skillIndex].skillName} against ${attackedPokemon.name}. ${attackedPokemon.name} fainted! ${this.name} has won the battle!`;
+                return `${this.name} ${chalk.bold("used")} ${
+                    this.skills[skillIndex].skillName
+                } ${chalk.bold("against")} ${attackedPokemon.name}. ${
+                    attackedPokemon.name
+                } ${chalk.bold("fainted!")} ${this.name} ${chalk.bold(
+                    "has won the battle!"
+                )}`;
             }
-            return `${this.name} used ${this.skills[skillIndex].skillName} against ${attackedPokemon.name} and dealt ${this.skills[skillIndex].dmgAmount} damage! ${attackedPokemon.name} has ${attackedPokemon.curHealth}/${attackedPokemon.maxHealth} HP left`;
+            return `${this.name} ${chalk.bold("used")} ${
+                this.skills[skillIndex].skillName
+            } ${chalk.bold("against")} ${attackedPokemon.name} ${chalk.bold(
+                "and dealt"
+            )} ${chalk
+                .hex("#DE2336")
+                .bold([this.skills[skillIndex].dmgAmount])} ${chalk.bold(
+                "damage!"
+            )} ${attackedPokemon.name} ${chalk.bold("has")} ${chalk
+                .hex("#49D188")
+                .bold([attackedPokemon.curHealth])}${chalk.bold("/")}${chalk
+                .hex("#49D188")
+                .bold([attackedPokemon.maxHealth])} ${chalk.bold("HP left")}`;
         }
     }
     getMagic() {
         if (this.maxMagic - this.curMagic === 0) {
-            return `${this.name} is already at ${this.curMagic}/${this.maxMagic}MP. No potion used.`;
+            return `${this.name} ${chalk.bold("is already at")} ${chalk
+                .hex("#4694E8")
+                .bold([this.curMagic])}}${chalk.bold("/")}${chalk
+                .hex("#4694E8")
+                .bold([this.maxMagic])}${chalk.bold("MP. No potion used.")}`;
         } else if (this.maxMagic - this.curMagic <= 40) {
             this.curMagic = this.maxMagic;
-            return `${this.name} is now at ${this.curMagic}/${this.maxMagic}MP - No more Potions needed!`;
+            return `${this.name} ${chalk.bold("is now at")} ${chalk
+                .hex("#4694E8")
+                .bold([this.curMagic])}}${chalk.bold("/")}${chalk
+                .hex("#4694E8")
+                .bold([this.maxMagic])}${chalk.bold(
+                "MP - No more Potions needed!"
+            )}`;
         } else {
             this.curMagic += 40;
-            return `${this.name} used a Potion and restored 40MP. ${this.name} is now at ${this.curMagic}/${this.maxMagic}MP.`;
+            return `${this.name} ${chalk.bold(
+                "used a Potion and restored"
+            )} ${chalk.hex("#4694E8").bold("40")}${chalk.bold("MP")}. ${
+                this.name
+            } ${chalk.bold("is now at")} ${chalk
+                .hex("#4694E8")
+                .bold([this.curMagic])}}${chalk.bold("/")}${chalk
+                .hex("#4694E8")
+                .bold([this.maxMagic])}${chalk.bold("MP")}.`;
         }
     }
     getHealth() {
         if (this.maxHealth - this.curHealth === 0) {
-            return `${this.name} is already at ${this.curHealth}/${this.maxHealth}HP. No potion used.`;
+            return `${this.name} ${chalk.bold("is already at")} ${chalk
+                .hex("#49D188")
+                .bold([this.curHealth])}${chalk.bold("/")}${chalk
+                .hex("#49D188")
+                .bold([this.maxHealth])}${chalk.bold("HP. No potion used.")}`;
         } else if (this.maxHealth - this.curHealth <= 50) {
             this.curHealth = this.maxHealth;
-            return `${this.name} is now at ${this.curHealth}/${this.maxHealth}HP - No more Potions needed!`;
+            return `${this.name} ${chalk.bold("is now at")} ${chalk
+                .hex("#49D188")
+                .bold([this.curHealth])}${chalk.bold("/")}${chalk
+                .hex("#49D188")
+                .bold([this.maxHealth])}${chalk.bold(
+                "HP - No more Potions needed!"
+            )}`;
         } else {
             this.curHealth += 50;
-            return `${this.name} used a Potion and restored 50HP. ${this.name} is now at ${this.curHealth}/${this.maxHealth}HP.`;
+            return `${this.name} ${chalk.bold(
+                "used a Potion and restored"
+            )} ${chalk.hex("#49D188").bold("50")}${chalk.bold("HP.")} ${
+                this.name
+            } ${chalk.bold("is now at")} ${chalk
+                .hex("#49D188")
+                .bold([this.curHealth])}${chalk.bold("/")}${chalk
+                .hex("#49D188")
+                .bold([this.maxHealth])}${chalk.bold("HP")}.`;
         }
     }
     learnAttackSkill(skillStr) {
         if (this.skills.length === 4) {
-            return `${this.name} can't learn ${skillStr.skillName} as it already has four abilities!`;
+            return `${this.name} ${chalk.bold("can't learn")} ${
+                skillStr.skillName
+            } ${chalk.bold("as it already has four abilities!")}`;
         } else if (this.skills.includes(skillStr)) {
-            return `${this.name} already knows ${skillStr.skillName}!`;
+            return `${this.name} ${chalk.bold("already knows")} ${
+                skillStr.skillName
+            }!`;
         } else {
             this.skills.push(skillStr);
-            return `${this.name} learned ${skillStr.skillName}!`;
+            return `${this.name} ${chalk.bold("learned")} ${
+                skillStr.skillName
+            }!`;
         }
     }
 }
@@ -126,7 +194,6 @@ const availablePokeMonArr = [
     snorlax,
     voltorb,
 ];
-
 /**
  * ATTACKSKILL CLASS
  */
