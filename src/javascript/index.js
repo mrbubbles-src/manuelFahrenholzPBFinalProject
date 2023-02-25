@@ -1,3 +1,4 @@
+import chalk from "chalk";
 /**
  * POKEMON CLASS
  */
@@ -183,19 +184,29 @@ setTimeout(function () {
     console.log(` `);
 }, 500);
 setTimeout(function () {
-    console.log(`Pikachu VS. The Food Thief`);
+    console.log(
+        `${chalk.hex("#FFCC01").bold("Pikachu")} ${chalk
+            .hex("#DE2336")
+            .bold("VS.")} ${chalk.hex("#029FC7").bold("The Food Thief")}`
+    );
 }, 500);
 setTimeout(function () {
     console.log(` `);
 }, 1000);
 setTimeout(function () {
-    console.log(`A PokéMon Story`);
+    console.log(
+        `${chalk.bold("A")} ${chalk
+            .hex("#FFCC01")
+            .bold("PokéMon")} ${chalk.bold("Story")}`
+    );
 }, 1000);
 setTimeout(function () {
     console.log(` `);
 }, 1000);
 setTimeout(function () {
-    console.log(`Pikachu is practising new attacks...`);
+    console.log(
+        `${pikachu.name} ${chalk.bold("is practising new attacks...")}`
+    );
 }, 6000);
 setTimeout(function () {
     console.log(` `);
@@ -219,7 +230,9 @@ setTimeout(function () {
 }, 26000);
 setTimeout(function () {
     console.log(
-        `Meanwhile, close nearby, Snorlax is looking for some food ...`
+        `${chalk.bold("Meanwhile, close nearby,")} ${snorlax.name} ${chalk.bold(
+            "is looking for some food ..."
+        )}`
     );
 }, 31000);
 setTimeout(function () {
@@ -227,7 +240,9 @@ setTimeout(function () {
 }, 36000);
 setTimeout(function () {
     console.log(
-        `... but can only find various TM's and HM's and 'goes to town' ...`
+        `${chalk.bold(
+            "... they find various TM's and HM's, thinks it's food and goes to town' ..."
+        )}`
     );
 }, 36000);
 setTimeout(function () {
@@ -252,7 +267,9 @@ setTimeout(function () {
 }, 42500);
 setTimeout(function () {
     console.log(
-        `Snorlax is still hungry and looks around for more things to eat.`
+        `${snorlax.name} ${chalk.bold(
+            "is still hungry and looks around for more things to eat."
+        )}`
     );
 }, 47000);
 setTimeout(function () {
@@ -260,9 +277,12 @@ setTimeout(function () {
 }, 52000);
 setTimeout(function () {
     console.log(
-        `Snorlax spots Pikachu and sees their basket full of yummies and starts to "run" over to eat all of the food in the basket.`
+        `${snorlax.name} ${chalk.bold("spots")} ${pikachu.name} ${chalk.bold(
+            'and sees their basket full of yummies and starts to "run" over to eat all of the food in the basket.'
+        )}`
     );
 }, 52000);
+0;
 setTimeout(function () {
     console.log(
         `-------------------------------------------------------------------------`
@@ -270,7 +290,9 @@ setTimeout(function () {
 }, 52000);
 setTimeout(function () {
     console.log(
-        `After a 5 minute run, Snorlax finally managed to get to the basket and starts to eat it.`
+        `${chalk.bold("After a 5 minute run,")} ${snorlax.name} ${chalk.bold(
+            "finally managed to get to the basket and starts to eat it."
+        )}`
     );
 }, 57000);
 setTimeout(function () {
@@ -278,8 +300,11 @@ setTimeout(function () {
 }, 62000);
 setTimeout(function () {
     console.log(
-        `Alerted by all the gross sounds of someone eating, Pikachu turns around in disgust and immediately get's angry about what they sees:
-    Someone is eating all their berries and other yums they brought with them!`
+        `${chalk.bold("Alerted by all the gross sounds of someone eating,")} ${
+            pikachu.name
+        } ${chalk.bold(
+            "turns around in disgust and immediately get's angry about what they sees: \n Someone is eating all their berries and other yums they brought with them!"
+        )}`
     );
 }, 62000);
 setTimeout(function () {
@@ -289,7 +314,9 @@ setTimeout(function () {
 }, 62000);
 setTimeout(function () {
     console.log(
-        `Fully enraged, Pikachu sprints towards Snorlax, jumps on it's back and uses the newly learned Thunder Shock on it.`
+        `${chalk.bold(
+            "Fully enraged, Pikachu sprints towards Snorlax, jumps on it's back and uses the newly learned Thunder Shock on it."
+        )}`
     );
 }, 72000);
 setTimeout(function () {
@@ -307,7 +334,9 @@ setTimeout(function () {
 }, 77000);
 setTimeout(function () {
     console.log(
-        `Suprised about the sudden tickle, Snorlax shakes their body, laughing, throwing Pikachu off their back.`
+        `${chalk.bold(
+            "Suprised about the sudden tickle, Snorlax shakes their body, laughing, throwing Pikachu off their back."
+        )}`
     );
 }, 82000);
 setTimeout(function () {
@@ -317,7 +346,9 @@ setTimeout(function () {
 }, 82000);
 setTimeout(function () {
     console.log(
-        `Pikachu, now even angrier, makes themselves ready to attack snorlax with all their power.... `
+        `${pikachu.name} ${chalk.bold(
+            ", now even angrier, makes themselves ready to attack snorlax with all their power.... "
+        )}`
     );
 }, 87000);
 setTimeout(function () {
@@ -326,7 +357,7 @@ setTimeout(function () {
     );
 }, 87000);
 setTimeout(function () {
-    console.log(`The Battle begins!`);
+    console.log(`${chalk.hex("#DE2336").bold("The Battle begins!")}`);
 }, 92000);
 setTimeout(function () {
     console.log(` `);
@@ -335,13 +366,13 @@ setTimeout(function () {
     console.log(pikachu.showStatus());
 }, 95000);
 setTimeout(function () {
-    console.log(`----`);
+    console.log(`${chalk.hex("#FFCC01").bold("----")}`);
 }, 97000);
 setTimeout(function () {
-    console.log(` VS `);
+    console.log(`${chalk.hex("#DE2336").bold(" VS ")}`);
 }, 97000);
 setTimeout(function () {
-    console.log(`----`);
+    console.log(`${chalk.hex("#029FC7").bold("----")}`);
 }, 97000);
 setTimeout(function () {
     console.log(snorlax.showStatus());
@@ -413,7 +444,15 @@ setTimeout(function () {
 }, 133000);
 setTimeout(function () {
     console.log(
-        `Out of breath, Pikachu looks around, trying to find something they can use to their advantage... A HEALTH POTION! Pikachu sprints towards the potion hoping to get there before Snorlax can get to them... And just in time Pikachu makes it to the potion! `
+        `${chalk.bold("Out of breath,")} ${pikachu.name} ${chalk.bold(
+            "looks around, trying to find something they can use to their advantage... A"
+        )} ${chalk.hex("49D188").bold("HEALTH POTION!")} ${
+            pikachu.name
+        } ${chalk.bold(
+            "sprints towards the potion hoping to get there before"
+        )} ${snorlax.name} ${chalk.bold(
+            "can get to them... And just in time"
+        )} ${pikachu.name} ${chalk.bold("makes it to the potion!")} `
     );
 }, 138000);
 setTimeout(function () {
@@ -431,7 +470,17 @@ setTimeout(function () {
 }, 148000);
 setTimeout(function () {
     console.log(
-        `After drinking the potion, Pikachu turns around, seeing Snorlax running towards them... They see something else though: A MANA POTION ... pressed into Snorlax's bellybutton ... - Pikachu is grossed out but does not want to loose against the food theif so they sprint towards the enemy, focused on the target, jumps at it and ....`
+        `${chalk.bold("After drinking the potion,")} ${
+            pikachu.name
+        } ${chalk.bold("turns around, seeing")} ${snorlax.name} ${chalk.bold(
+            "running towards them... They see something else though: A"
+        )} ${chalk.hex("#4694E8").bold("MANA POTION")} ${chalk.bold(
+            "... pressed into"
+        )} ${snorlax.name}${chalk.bold("'s bellybutton ... - ")}${
+            pikachu.name
+        } ${chalk.bold(
+            "is grossed out but does not want to loose against the food theif so they sprint towards the enemy, focused on the target, jumps at it and ...."
+        )}`
     );
 }, 152000);
 setTimeout(function () {
@@ -449,7 +498,9 @@ setTimeout(function () {
 }, 162000);
 setTimeout(function () {
     console.log(
-        `Pikachu, feeling much better now, jumps off Snorlax's belly and readies another attack...`
+        `${pikachu.name}${chalk.bold(", feeling much better now, jumps off")} ${
+            snorlax.name
+        }${chalk.bold("'s belly and readies another attack...")}`
     );
 }, 167000);
 setTimeout(function () {
@@ -481,7 +532,9 @@ setTimeout(function () {
 }, 182000);
 setTimeout(function () {
     console.log(
-        `Almost collapsing from exhaustion, Snorlax prepares a devestating attack...`
+        `${chalk.bold("Almost collapsing from exhaustion,")} ${
+            snorlax.name
+        } ${chalk.bold("prepares a devestating attack...")}`
     );
 }, 187000);
 setTimeout(function () {
@@ -513,7 +566,11 @@ setTimeout(function () {
 }, 202000);
 setTimeout(function () {
     console.log(
-        `Both Pikachu and Snorlax prepare themselves for a final attack. Which of them will be faster at this point? ....`
+        `${chalk.bold("Both")} ${pikachu.name} ${chalk.bold("and")} ${
+            snorlax.name
+        } ${chalk.bold(
+            "prepare themselves for a final attack. Which of them will be faster at this point? ...."
+        )}`
     );
 }, 207000);
 setTimeout(function () {
@@ -531,12 +588,26 @@ setTimeout(function () {
 }, 212000);
 setTimeout(function () {
     console.log(
-        `Exhausted from this tough battle, but happy that they've got revenge against the food thief, Pikachu makes their way to the nearest Poké-Café to grab some well earned yums.`
+        `${chalk.bold(
+            "Exhausted from this tough battle, but happy that they've got revenge against the"
+        )} ${chalk.hex("#029FC7").bold("food thief")}, ${
+            pikachu.name
+        } ${chalk.bold("makes their way to the nearest")} ${chalk
+            .hex("#FFCC01")
+            .bold("Poké")}${"-"}${chalk
+            .hex("#E990F5")
+            .bold("Café")} ${chalk.bold("to grab some well earned")} ${chalk
+            .hex("#49D188")
+            .bold("yums")}.`
     );
 }, 217000);
 setTimeout(function () {
     console.log(`
--- The End --
+${chalk
+    .hex("#FFCC01")
+    .bold(
+        "--"
+    )} ${chalk.hex("#029FC7").bold("The")} ${chalk.hex("#FFCC01").bold("End")}${chalk.hex("#029FC7").bold("--")}
 `);
 }, 227000);
 setTimeout(function () {
