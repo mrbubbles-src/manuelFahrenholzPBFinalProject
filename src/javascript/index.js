@@ -140,30 +140,102 @@ class AttackSkill {
 /**
  * AVAILABLE SKILLS
  */
-const psychoBoost = new AttackSkill("Psycho Boost", 140, 25);
-const headSmash = new AttackSkill("Head Smash", 150, 25);
-const blastBurn = new AttackSkill("Blast Burn", 150, 25);
-const hydroCannon = new AttackSkill("Hydro Cannon", 150, 25);
-const frenzyPlant = new AttackSkill("Frenzy Plant", 150, 25);
-const hyperBeam = new AttackSkill("Hyper Beam", 150, 25);
+const psychoBoost = new AttackSkill(
+    `${chalk.hex("#F85888").bold("Psycho Boost")}`,
+    140,
+    25
+);
+const headSmash = new AttackSkill(
+    `${chalk.hex("#B8A038").bold("Head Smash")}`,
+    150,
+    25
+);
+const blastBurn = new AttackSkill(
+    `${chalk.hex("#F08030").bold("Blast Burn")}`,
+    150,
+    25
+);
+const hydroCannon = new AttackSkill(
+    `${chalk.hex("#6890F0").bold("Hydro Cannon")}`,
+    150,
+    25
+);
+const frenzyPlant = new AttackSkill(
+    `${chalk.hex("#78C850").bold("Frenzy Plant")}`,
+    150,
+    25
+);
+const hyperBeam = new AttackSkill(
+    `${chalk.hex("#A8A878").bold("Hyper Beam")}`,
+    150,
+    25
+);
 const tenMVThunderBolt = new AttackSkill(
-    "10-Million Volt Thunder Bolt",
+    `${chalk.hex("#F8D030").bold("10-Million Volt Thunder Bolt")}`,
     195,
     50
 );
-const knockOff = new AttackSkill("Knock Off", 65, 5);
-const scald = new AttackSkill("Scald", 80, 6);
-const fireLash = new AttackSkill("Fire Lash", 80, 5);
-const firePunch = new AttackSkill("Fire Punch", 75, 5);
-const leafBlade = new AttackSkill("Leaf Blade", 90, 5);
-const razorLeaf = new AttackSkill("Razor Leaf", 80, 4);
-const bodySlam = new AttackSkill("Body Slam", 85, 6);
-const crushClaw = new AttackSkill("Crush Claw", 75, 10);
-const aquaCutter = new AttackSkill("Aqua Cutter", 70, 5);
-const splishySplash = new AttackSkill("Splishy Splash", 90, 6);
-const thunder = new AttackSkill("Thunder", 110, 10);
-const thunderBolt = new AttackSkill("Thunder Bolt", 90, 6);
-const thunderShock = new AttackSkill("Thunder Shock", 40, 6);
+const knockOff = new AttackSkill(
+    `${chalk.hex("#68A090").bold("Knock Off")}`,
+    65,
+    5
+);
+const scald = new AttackSkill(`${chalk.hex("#6890F0").bold("Scald")}`, 80, 6);
+const fireLash = new AttackSkill(
+    `${chalk.hex("#F08030").bold("Fire Lash")}`,
+    80,
+    5
+);
+const firePunch = new AttackSkill(
+    `${chalk.hex("#F08030").bold("Fire Punch")}`,
+    75,
+    5
+);
+const leafBlade = new AttackSkill(
+    `${chalk.hex("#78C850").bold("Leaf Blade")}`,
+    90,
+    5
+);
+const razorLeaf = new AttackSkill(
+    `${chalk.hex("#78C850").bold("Razor Leaf")}`,
+    80,
+    4
+);
+const bodySlam = new AttackSkill(
+    `${chalk.hex("#A8A878").bold("Body Slam")}`,
+    85,
+    6
+);
+const crushClaw = new AttackSkill(
+    `${chalk.hex("#A8A878").bold("Crush Claw")}`,
+    75,
+    10
+);
+const aquaCutter = new AttackSkill(
+    `${chalk.hex("#6890F0").bold("Aqua Cutter")}`,
+    70,
+    5
+);
+const splishySplash = new AttackSkill(
+    `${chalk.hex("#6890F0").bold("Splishy Splash")}`,
+    90,
+    6
+);
+const thunder = new AttackSkill(
+    `${chalk.hex("#F8D030").bold("Thunder")}`,
+    110,
+    10
+);
+const thunderBolt = new AttackSkill(
+    `${chalk.hex("#F8D030").bold("Thunder Bolt")}`,
+    90,
+    6
+);
+const thunderShock = new AttackSkill(
+    `${chalk.hex("#F8D030").bold("Thunder Shock")}`,
+    40,
+    6
+);
 
 const availableSkillArr = [
     psychoBoost,
@@ -342,7 +414,7 @@ setTimeout(function () {
 }, 62000);
 setTimeout(function () {
     console.log(
-        `${chalk.bold("Fully enraged,")} ${pikachu.name}] ${chalk.bold(
+        `${chalk.bold("Fully enraged,")} ${pikachu.name} ${chalk.bold(
             "sprints towards"
         )} ${snorlax.name}${chalk.bold(
             ", jumps on it's back and uses the newly learned"
@@ -379,8 +451,8 @@ setTimeout(function () {
 setTimeout(function () {
     console.log(
         `${pikachu.name} ${chalk.bold(
-            ", now even angrier, makes themselves ready to attack snorlax with all their power.... "
-        )}`
+            ", now even angrier, makes themselves ready to attack"
+        )} ${snorlax.name} ${chalk.bold("with all their power.... ")}`
     );
 }, 87000);
 setTimeout(function () {
@@ -508,7 +580,7 @@ setTimeout(function () {
             "running towards them... They see something else though: A"
         )} ${chalk.hex("#4694E8").bold("MANA POTION")} ${chalk.bold(
             "... pressed into"
-        )} ${snorlax.name}${chalk.bold("'s bellybutton ... - ")}${
+        )} ${snorlax.name}${chalk.bold("'s bellybutton ... ")}${
             pikachu.name
         } ${chalk.bold(
             "is grossed out but does not want to loose against the food theif so they sprint towards the enemy, focused on the target, jumps at it and ...."
