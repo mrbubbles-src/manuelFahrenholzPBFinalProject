@@ -328,23 +328,23 @@ const availableSkillArr = [
 ];
 /** RND PKMN GENRATOR */
 
-// let rndPkmn;
-// const pokemonGenerator = () => {
-//     if (!rndPkmn) {
-//         let generatedPokemon = Math.floor(
-//             Math.random() * availablePokeMonArr.length
-//         );
-//         for (let i = 0; i < 4; i++) {
-//             availablePokeMonArr[generatedPokemon].learnAttackSkill(
-//                 availableSkillArr[
-//                     Math.floor(Math.random() * availableSkillArr.length)
-//                 ]
-//             );
-//         }
-//         rndPkmn = availablePokeMonArr[generatedPokemon];
-//     }
-//     return rndPkmn;
-// };
+let rndPkmn;
+const pokemonGenerator = () => {
+    if (!rndPkmn) {
+        let generatedPokemon = Math.floor(
+            Math.random() * availablePokeMonArr.length
+        );
+        for (let i = 0; i < 4; i++) {
+            availablePokeMonArr[generatedPokemon].learnAttackSkill(
+                availableSkillArr[
+                    Math.floor(Math.random() * availableSkillArr.length)
+                ]
+            );
+        }
+        rndPkmn = availablePokeMonArr[generatedPokemon];
+    }
+    return rndPkmn;
+};
 // console.log(pokemonGenerator()); // logs the generated Pokémon
 // console.log(pokemonGenerator()); // logs the same Pokémon as before
 // console.log(pokemonGenerator()); // logs the same Pokémon as before
@@ -795,33 +795,3 @@ setTimeout(function () {
         `--------------------------------------------------------------------------`
     );
 }, 227000);
-=======
-let rndPkmn;
-const pokemonGenerator = () => {
-    if (!rndPkmn) {
-        let generatedPokemon = Math.floor(
-            Math.random() * availablePokeMonArr.length
-        );
-        for (let i = 0; i < 4; i++) {
-            availablePokeMonArr[generatedPokemon].learnAttackSkill(
-                availableSkillArr[
-                    Math.floor(Math.random() * availableSkillArr.length)
-                ]
-            );
-        }
-        rndPkmn = availablePokeMonArr[generatedPokemon];
-    }
-    return rndPkmn;
-};
-console.log(pokemonGenerator());
-console.log(pikachu.learnAttackSkill(thunder));
-console.log(pikachu.learnAttackSkill(tenMVThunderBolt));
-console.log(pikachu.learnAttackSkill(thunderBolt));
-console.log(pikachu.learnAttackSkill(thunderShock));
-console.log(pokemonGenerator().attack(2, pikachu));
-console.log(pikachu.attack(2, pokemonGenerator()));
-console.log(pokemonGenerator().attack(2, pikachu));
-console.log(pikachu.getHealth());
-console.log(pokemonGenerator().getMagic());
-console.log(pokemonGenerator().showStatus());
-console.log(pikachu.showStatus());
