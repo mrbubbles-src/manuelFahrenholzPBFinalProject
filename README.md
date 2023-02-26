@@ -1,8 +1,14 @@
-# manuelFahrenholzPBFinalProject
+# manuelFahrenholzPBFinalProject PkMn Lite
 
-Manuel Fahrenholz Final Project for the Programming-Basics-Module
+Final Project for the Programming-Basics-Module by Manuel Fahrenholz Class @DCI FBW WD D07 A
 
-You'll find two JS files in the src > javascript folder: - index.js - terminal output is made prettier with npm module chalk - noChalkIndex.js - as the name implies, the same code but without the chalk module additions for better readability.
+## PokéMon Lite
+
+You'll find two JS files in the src > javascript folder:
+
+-   index.js - terminal output is made prettier with npm module chalk
+
+-   noChalkIndex.js - as the name implies, the same code but without the chalk module additions for better readability.
 
 More Ideas to come over time as there just wasn't enough time to implement everything I wanted but the basic concept stands and works :)!
 
