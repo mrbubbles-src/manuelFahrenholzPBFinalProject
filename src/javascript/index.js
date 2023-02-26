@@ -9,6 +9,49 @@ import chalk from "chalk";
 
 /**
  * POKEMON CLASS
+ *
+ * constructor:
+ * Takes in 3 properties
+ *      name, health magic
+ * internal properties:
+ *      current Health (damage will be subtracted here; takes input from health)
+ *      maximum Health (comparison property; takes input from health)
+ *      current Magic (cost of skill will be subtracted here; takes input from magic)
+ *      maximum Magic (comparison property; takes input from magic)
+ *      empty skills array
+ *
+ * class methods:
+ *
+ * show status:
+ *      shows pokemon name, current and max health, current and max mana (magic) and available skills
+ *
+ * attack:
+ *      checks if attack is possible (= enough magic for skill cost is available)
+ *          if not return message that there's not enough MP (magic points / mana points)
+ *      if attack is possible
+ *          subtract magcic cost of skill from current magic value
+ *          subtract skill damage value from opponent current health value
+ *              if health of opponent is smaller or equal to 0
+ *                  set oponents health to 0
+ *                  return victory string
+ *      return basic attack string (i.e. "pokemon.name attacked opponent.name with skill.name and did x dmg. opponent.name has x/y hp left")
+ *
+ * getMagic / getHealth:
+ *      checks if maximum health/magic minus current health/magic is 0 (= nothing was lost before)
+ *          return string that says is already max
+ *      chek if maximum healt/magic minus current health/magic is smaller or equal to what potion is supposed to retun if function is called
+ *          set current healt/magic to maximum health/magic
+ *          return string that says current/max value and no more potions needed
+ *      else add x to current healt/magic value
+ *       return string that says how much was added to pokemon and current/max values
+ *
+ * learnAttackSkill:
+ *      takes one argument ("skill name")
+ *    checks if skills array length is already equal to 4
+ *      it it is return string that says can't learn any more attacks
+ *    checks if pokemon already know that skill that you want it to learn
+ *      if it knows it, return string that says it already knows it
+ *    else push skill to skill array and return string that pokemon learned skill.name
  */
 class Pokemon {
     constructor(name, health, magic) {
@@ -154,6 +197,14 @@ ${chalk.bold("Available Skills:")} ${availableSkills.join(", ")}`;
 }
 /**
  * CREATED POKEMON
+ *
+ * create new pokemon instances:
+ *
+ * const pokemonName = new Pokemon("pokemon Name", health value as number, magic value as number)
+ *
+ * assume pokemon as if it's level 100
+ * every pokemon gets max possible health value it can get in pokemon game based on wiki pages
+ * every pokemon gets flat magic value of 100 since there is no mana in pokemon games
  */
 const bulbasaur = new Pokemon(
     `${chalk.hex("#8BC7AE").bold("Bulbasaur")}`,
@@ -204,6 +255,17 @@ const availablePokeMonArr = [
 ];
 /**
  * ATTACKSKILL CLASS
+ *
+ * constructor:
+ *
+ * takes in 3 properties
+ *      sillName, dmgAmount, MPCost
+ *
+ * skill name = name of the skill
+ * dmgAmount = amount of damage a skill does to health
+ * MPCost = amount of magic it requires to be used
+ *
+ * saves inputs into an object
  */
 class AttackSkill {
     constructor(skillName, dmgAmount, MPCost) {
@@ -214,6 +276,14 @@ class AttackSkill {
 }
 /**
  * AVAILABLE SKILLS
+ *
+ * create new attack skill instances:
+ *
+ * const skillName = new AttackSkill("Skill Name", damage value as number, magic cost as number)
+ *
+ * damage value is same as listed for skill on wiki pages
+ *
+ * cost value based on PP value from pokemon games. so an attack that can be used 5 times as base in pokemon games has a cost of 25 magic assuming every pokemon has 100 mana
  */
 const psychoBoost = new AttackSkill(
     `${chalk.hex("#F85888").bold("Psycho Boost")}`,
@@ -334,8 +404,20 @@ const availableSkillArr = [
     thunderBolt,
     thunderShock,
 ];
-/** RND PKMN GENRATOR */
-
+/** RND PKMN GENRATOR
+ *
+ * rndPkmn variable is a save-state variable
+ *      stops generator from generating again if pokemon was already generated so generated pokemon can be used multiple times before new node is executed
+ * can be set to undefined or null so generator will generate again before a new node is executed
+ * -----
+ * checks if rndPkmn is already generated and saved into rndPkmn variable
+ *      if not
+ *          create let generatedPokemon variable and
+ *              generate a random pokemon out of availablePokeMonArr
+ *      do a loop 4x to teach generatedPokemon 4 radomly selected skills from availableSkillArr
+ *          set rndPkm to generatedPokemon
+ *      return rndPkm
+ */
 let rndPkmn;
 const pokemonGenerator = () => {
     if (!rndPkmn) {
