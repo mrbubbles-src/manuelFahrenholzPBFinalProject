@@ -1,5 +1,5 @@
 /**
- * PokéMon Lite
+ * PokéMon Lite w/o chalk
  * DCI FBW WD D07 A
  * Programming Basics Module Final Project
  * by Manuel Fahrenholz

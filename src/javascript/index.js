@@ -1,4 +1,12 @@
+/**
+ * PokéMon Lite w/ chalk
+ * DCI FBW WD D07 A
+ * Programming Basics Module Final Project
+ * by Manuel Fahrenholz
+ */
+
 import chalk from "chalk";
+
 /**
  * POKEMON CLASS
  */
@@ -93,7 +101,7 @@ ${chalk.bold("Available Skills:")} ${availableSkills.join(", ")}`;
                 this.name
             } ${chalk.bold("is now at")} ${chalk
                 .hex("#4694E8")
-                .bold([this.curMagic])}}${chalk.bold("/")}${chalk
+                .bold([this.curMagic])}${chalk.bold("/")}${chalk
                 .hex("#4694E8")
                 .bold([this.maxMagic])}${chalk.bold("MP")}.`;
         }
@@ -348,6 +356,26 @@ const pokemonGenerator = () => {
 // console.log(pokemonGenerator()); // logs the generated Pokémon
 // console.log(pokemonGenerator()); // logs the same Pokémon as before
 // console.log(pokemonGenerator()); // logs the same Pokémon as before
+
+// console.log(pikachu.showStatus());
+// console.log(pokemonGenerator().showStatus());
+// rndPkmn = undefined;
+// console.log(pokemonGenerator().showStatus());
+// console.log(pikachu.learnAttackSkill(thunder));
+// console.log(pikachu.learnAttackSkill(tenMVThunderBolt));
+// console.log(pikachu.learnAttackSkill(thunderBolt));
+// console.log(pikachu.learnAttackSkill(thunderShock));
+// console.log(pokemonGenerator());
+// console.log(pikachu.showStatus());
+// console.log(pokemonGenerator().showStatus());
+// console.log(pokemonGenerator().attack(2, pikachu));
+// console.log(pikachu.attack(2, pokemonGenerator()));
+// console.log(pokemonGenerator().attack(2, pikachu));
+// console.log(pikachu.getHealth());
+// console.log(pokemonGenerator().getMagic());
+// console.log(pokemonGenerator().showStatus());
+// console.log(pikachu.showStatus());
+
 /**
  * FIGHT STORY
  */
