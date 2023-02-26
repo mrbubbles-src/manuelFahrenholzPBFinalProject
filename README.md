@@ -8,6 +8,8 @@ More Ideas to come over time as there just wasn't enough time to implement every
 
 Hope you'll enjoy it!
 
+Manuel
+
 PS: In case the colors don't work in the terminal when using `node index.js`, you might need to do the following:
 
 -   Check if the node modules are properly cloned, if not you can install chalk with the following terminal command:
