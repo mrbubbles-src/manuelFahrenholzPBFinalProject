@@ -1,4 +1,10 @@
 /**
+ * PokéMon Lite
+ * DCI FBW WD D07 A
+ * Programming Basics Module Final Project
+ * by Manuel Fahrenholz
+ */
+/**
  * POKEMON CLASS
  */
 class Pokemon {
@@ -175,15 +181,21 @@ const pokemonGenerator = () => {
     }
     return rndPkmn;
 };
-console.log(pokemonGenerator());
-console.log(pikachu.learnAttackSkill(thunder));
-console.log(pikachu.learnAttackSkill(tenMVThunderBolt));
-console.log(pikachu.learnAttackSkill(thunderBolt));
-console.log(pikachu.learnAttackSkill(thunderShock));
-console.log(pokemonGenerator().attack(2, pikachu));
-console.log(pikachu.attack(2, pokemonGenerator()));
-console.log(pokemonGenerator().attack(2, pikachu));
-console.log(pikachu.getHealth());
-console.log(pokemonGenerator().getMagic());
-console.log(pokemonGenerator().showStatus());
 console.log(pikachu.showStatus());
+console.log(pokemonGenerator().showStatus());
+// rndPkmn = undefined;
+// console.log(pokemonGenerator().showStatus());
+// console.log(pikachu.learnAttackSkill(thunder));
+// console.log(pikachu.learnAttackSkill(tenMVThunderBolt));
+// console.log(pikachu.learnAttackSkill(thunderBolt));
+// console.log(pikachu.learnAttackSkill(thunderShock));
+// console.log(pokemonGenerator());
+// console.log(pikachu.showStatus());
+// console.log(pokemonGenerator().showStatus());
+// console.log(pokemonGenerator().attack(2, pikachu));
+// console.log(pikachu.attack(2, pokemonGenerator()));
+// console.log(pokemonGenerator().attack(2, pikachu));
+// console.log(pikachu.getHealth());
+// console.log(pokemonGenerator().getMagic());
+// console.log(pokemonGenerator().showStatus());
+// console.log(pikachu.showStatus());
