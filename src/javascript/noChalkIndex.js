@@ -199,3 +199,377 @@ console.log(pokemonGenerator().showStatus());
 // console.log(pokemonGenerator().getMagic());
 // console.log(pokemonGenerator().showStatus());
 // console.log(pikachu.showStatus());
+
+/**
+ * FIGHT STORY
+ */
+// setTimeout(function () {
+//     console.log(
+//         `--------------------------------------------------------------------------`
+//     );
+// }, 500);
+// setTimeout(function () {
+//     console.log(` `);
+// }, 500);
+// setTimeout(function () {
+//     console.log(`Pikachu VS. The Food Thief`);
+// }, 500);
+// setTimeout(function () {
+//     console.log(` `);
+// }, 1000);
+// setTimeout(function () {
+//     console.log(`A PokéMon Story`);
+// }, 1000);
+// setTimeout(function () {
+//     console.log(` `);
+// }, 1000);
+// setTimeout(function () {
+//     console.log(`${pikachu.name} is practising new attacks...`);
+// }, 6000);
+// setTimeout(function () {
+//     console.log(` `);
+// }, 6000);
+// setTimeout(function () {
+//     console.log(pikachu.learnAttackSkill(thunder));
+// }, 11000);
+// setTimeout(function () {
+//     console.log(pikachu.learnAttackSkill(thunderBolt));
+// }, 16000);
+// setTimeout(function () {
+//     console.log(pikachu.learnAttackSkill(thunderShock));
+// }, 21000);
+// setTimeout(function () {
+//     console.log(pikachu.learnAttackSkill(tenMVThunderBolt));
+// }, 26000);
+// setTimeout(function () {
+//     console.log(
+//         `--------------------------------------------------------------------------`
+//     );
+// }, 26000);
+// setTimeout(function () {
+//     console.log(
+//         `Meanwhile, close nearby, ${snorlax.name} is looking for some food ...`
+//     );
+// }, 31000);
+// setTimeout(function () {
+//     console.log(` `);
+// }, 36000);
+// setTimeout(function () {
+//     console.log(
+//         `... they find various TM's and HM's, thinks it's food and goes to town' ...`
+//     );
+// }, 36000);
+// setTimeout(function () {
+//     console.log(` `);
+// }, 36000);
+// setTimeout(function () {
+//     console.log(snorlax.learnAttackSkill(headSmash));
+// }, 41000);
+// setTimeout(function () {
+//     console.log(snorlax.learnAttackSkill(hyperBeam));
+// }, 41500);
+// setTimeout(function () {
+//     console.log(snorlax.learnAttackSkill(bodySlam));
+// }, 42000);
+// setTimeout(function () {
+//     console.log(snorlax.learnAttackSkill(crushClaw));
+// }, 42500);
+// setTimeout(function () {
+//     console.log(
+//         `-------------------------------------------------------------------------`
+//     );
+// }, 42500);
+// setTimeout(function () {
+//     console.log(
+//         `${snorlax.name} is still hungry and looks around for more things to eat.`
+//     );
+// }, 47000);
+// setTimeout(function () {
+//     console.log(` `);
+// }, 52000);
+// setTimeout(function () {
+//     console.log(
+//         `${snorlax.name} spots ${pikachu.name} and sees their basket full of yummies and starts to "run" over to eat all of the food in the basket.`
+//     );
+// }, 52000);
+// 0;
+// setTimeout(function () {
+//     console.log(
+//         `-------------------------------------------------------------------------`
+//     );
+// }, 52000);
+// setTimeout(function () {
+//     console.log(
+//         `After a 5 minute run, ${snorlax.name} finally managed to get to the basket and starts to eat it.`
+//     );
+// }, 57000);
+// setTimeout(function () {
+//     console.log(` `);
+// }, 62000);
+// setTimeout(function () {
+//     console.log(
+//         `Alerted by all the gross sounds of someone eating, ${pikachu.name} turns around in disgust and immediately get's angry about what they sees: \n Someone is eating all their berries and other yums they brought with them!`
+//     );
+// }, 62000);
+// setTimeout(function () {
+//     console.log(
+//         `-------------------------------------------------------------------------`
+//     );
+// }, 62000);
+// setTimeout(function () {
+//     console.log(
+//         `Fully enraged, ${pikachu.name} sprints towards ${snorlax.name}, jumps on it's back and uses the newly learned ${thunderShock.skillName} on it.`
+//     );
+// }, 72000);
+// setTimeout(function () {
+//     console.log(
+//         `-------------------------------------------------------------------------`
+//     );
+// }, 72000);
+// setTimeout(function () {
+//     console.log(pikachu.attack(2, snorlax));
+// }, 77000);
+// setTimeout(function () {
+//     console.log(
+//         `-------------------------------------------------------------------------`
+//     );
+// }, 77000);
+// setTimeout(function () {
+//     console.log(
+//         `Suprised about the sudden tickle, ${snorlax.name} shakes their body, laughing, throwing ${pikachu.name} off their back.`
+//     );
+// }, 82000);
+// setTimeout(function () {
+//     console.log(
+//         `-------------------------------------------------------------------------`
+//     );
+// }, 82000);
+// setTimeout(function () {
+//     console.log(
+//         `${pikachu.name}, now even angrier, makes themselves ready to attack ${snorlax.name} with all their power...`
+//     );
+// }, 87000);
+// setTimeout(function () {
+//     console.log(
+//         `-------------------------------------------------------------------------`
+//     );
+// }, 87000);
+// setTimeout(function () {
+//     console.log(`The Battle begins!`);
+// }, 92000);
+// setTimeout(function () {
+//     console.log(` `);
+// }, 92000);
+// setTimeout(function () {
+//     console.log(pikachu.showStatus());
+// }, 95000);
+// setTimeout(function () {
+//     console.log(`----`);
+// }, 97000);
+// setTimeout(function () {
+//     console.log(` VS `);
+// }, 97000);
+// setTimeout(function () {
+//     console.log(`----`);
+// }, 97000);
+// setTimeout(function () {
+//     console.log(snorlax.showStatus());
+// }, 100000);
+// setTimeout(function () {
+//     console.log(
+//         `-------------------------------------------------------------------------`
+//     );
+// }, 100000);
+// setTimeout(function () {
+//     console.log(pikachu.attack(1, snorlax));
+// }, 105000);
+// setTimeout(function () {
+//     console.log(
+//         `-------------------------------------------------------------------------`
+//     );
+// }, 105000);
+// setTimeout(function () {
+//     console.log(snorlax.attack(2, pikachu));
+// }, 110000);
+// setTimeout(function () {
+//     console.log(
+//         `-------------------------------------------------------------------------`
+//     );
+// }, 110000);
+// setTimeout(function () {
+//     console.log(pikachu.showStatus());
+// }, 115000);
+// setTimeout(function () {
+//     console.log(` `);
+// }, 118000);
+// setTimeout(function () {
+//     console.log(snorlax.showStatus());
+// }, 118000);
+// setTimeout(function () {
+//     console.log(
+//         `-------------------------------------------------------------------------`
+//     );
+// }, 118000);
+// setTimeout(function () {
+//     console.log(pikachu.attack(3, snorlax));
+// }, 122000);
+// setTimeout(function () {
+//     console.log(
+//         `-------------------------------------------------------------------------`
+//     );
+// }, 122000);
+// setTimeout(function () {
+//     console.log(snorlax.attack(2, pikachu));
+// }, 127000);
+// setTimeout(function () {
+//     console.log(
+//         `-------------------------------------------------------------------------`
+//     );
+// }, 127000);
+// setTimeout(function () {
+//     console.log(pikachu.showStatus());
+// }, 130000);
+// setTimeout(function () {
+//     console.log(` `);
+// }, 133000);
+// setTimeout(function () {
+//     console.log(snorlax.showStatus());
+// }, 133000);
+// setTimeout(function () {
+//     console.log(
+//         `-------------------------------------------------------------------------`
+//     );
+// }, 133000);
+// setTimeout(function () {
+//     console.log(
+//         `Out of breath, ${pikachu.name} looks around, trying to find something they can use to their advantage... A HEALTH POTION! ${pikachu.name} sprints towards the potion hoping to get there before ${snorlax.name} can get to them... And just in time ${pikachu.name} makes it to the potion!`
+//     );
+// }, 138000);
+// setTimeout(function () {
+//     console.log(
+//         `-------------------------------------------------------------------------`
+//     );
+// }, 138000);
+// setTimeout(function () {
+//     console.log(pikachu.getHealth());
+// }, 148000);
+// setTimeout(function () {
+//     console.log(
+//         `-------------------------------------------------------------------------`
+//     );
+// }, 148000);
+// setTimeout(function () {
+//     console.log(
+//         `After drinking the potion, ${pikachu.name} turns around, seeing ${snorlax.name} running towards them... They see something else though: A MANA POTION... pressed into ${snorlax.name}$'s bellybutton ...${pikachu.name} is grossed out but does not want to loose against the food theif so they sprint towards the enemy, focused on the target, jumps at it and ....`
+//     );
+// }, 152000);
+// setTimeout(function () {
+//     console.log(
+//         `-------------------------------------------------------------------------`
+//     );
+// }, 152000);
+// setTimeout(function () {
+//     console.log(pikachu.getMagic());
+// }, 162000);
+// setTimeout(function () {
+//     console.log(
+//         `-------------------------------------------------------------------------`
+//     );
+// }, 162000);
+// setTimeout(function () {
+//     console.log(
+//         `${pikachu.name}, feeling much better now, jumps off ${snorlax.name}'s belly and readies another attack...`
+//     );
+// }, 167000);
+// setTimeout(function () {
+//     console.log(
+//         `-------------------------------------------------------------------------`
+//     );
+// }, 167000);
+// setTimeout(function () {
+//     console.log(pikachu.attack(3, snorlax));
+// }, 172000);
+// setTimeout(function () {
+//     console.log(
+//         `-------------------------------------------------------------------------`
+//     );
+// }, 172000);
+// setTimeout(function () {
+//     console.log(pikachu.showStatus());
+// }, 177000);
+// setTimeout(function () {
+//     console.log(` `);
+// }, 182000);
+// setTimeout(function () {
+//     console.log(snorlax.showStatus());
+// }, 182000);
+// setTimeout(function () {
+//     console.log(
+//         `-------------------------------------------------------------------------`
+//     );
+// }, 182000);
+// setTimeout(function () {
+//     console.log(
+//         `Almost collapsing from exhaustion, ${snorlax.name} prepares a devestating attack...`
+//     );
+// }, 187000);
+// setTimeout(function () {
+//     console.log(
+//         `-------------------------------------------------------------------------`
+//     );
+// }, 187000);
+// setTimeout(function () {
+//     console.log(snorlax.attack(1, pikachu));
+// }, 192000);
+// setTimeout(function () {
+//     console.log(
+//         `-------------------------------------------------------------------------`
+//     );
+// }, 192000);
+// setTimeout(function () {
+//     console.log(pikachu.showStatus());
+// }, 197000);
+// setTimeout(function () {
+//     console.log(` `);
+// }, 202000);
+// setTimeout(function () {
+//     console.log(snorlax.showStatus());
+// }, 202000);
+// setTimeout(function () {
+//     console.log(
+//         `-------------------------------------------------------------------------`
+//     );
+// }, 202000);
+// setTimeout(function () {
+//     console.log(
+//         `Both ${pikachu.name} and ${snorlax.name} prepare themselves for a final attack. Which one of them will be faster at this point? ...`
+//     );
+// }, 207000);
+// setTimeout(function () {
+//     console.log(
+//         `-------------------------------------------------------------------------`
+//     );
+// }, 207000);
+// setTimeout(function () {
+//     console.log(pikachu.attack(0, snorlax));
+// }, 212000);
+// setTimeout(function () {
+//     console.log(
+//         `-------------------------------------------------------------------------`
+//     );
+// }, 212000);
+// setTimeout(function () {
+//     console.log(
+//         `Exhausted from this tough battle, but happy that they've got revenge against the food thief, ${pikachu.name} makes their way to the nearest Poké-Café to grab some well earned yums.`
+//     );
+// }, 217000);
+// setTimeout(function () {
+//     console.log(`
+// --The End--
+// `);
+// }, 227000);
+// setTimeout(function () {
+//     console.log(
+//         `--------------------------------------------------------------------------`
+//     );
+// }, 227000);
