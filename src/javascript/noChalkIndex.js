@@ -53,10 +53,8 @@
 class Pokemon {
     constructor(name, health, magic) {
         this.name = name;
-        this.health = health;
         this.curHealth = health;
         this.maxHealth = health;
-        this.magic = magic;
         this.curMagic = magic;
         this.maxMagic = magic;
         this.skills = [];
